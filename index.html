@@ -1,0 +1,269 @@
+<!--
+  ShaBe - Single-file static site (index.html)
+  - Text-logo version, tie-dye animated background
+  - Fonts: Playfair Display (headings), Poppins (body)
+  - Drop this file into a GitHub Pages repository as index.html and enable Pages
+
+  Deploy:
+  1. Create a new GitHub repo (e.g., shabe-site)
+  2. Add this file as index.html at the repo root
+  3. In repo Settings -> Pages -> Source: main branch / root -> Save
+  4. Your site will appear at https://<your-username>.github.io/<repo-name>/
+
+  Replace placeholder images and copy text in the Products and Contact sections.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShaBe — Handmade with Heart & a Splash of Colour</title>
+  <meta name="description" content="ShaBe — Handmade candles, beaded jewellery, printed shirts, tote bags, illustrations and more." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --pink:#f24a72;
+      --yellow:#f8e44c;
+      --blue:#58c6f2;
+      --purple:#c073f2;
+      --glass: rgba(255,255,255,0.06);
+      --card-glow: 0 6px 30px rgba(0,0,0,0.6);
+      --max-width:1100px;
+    }
+    /* Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--bg);
+      color:#eee;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Tie-dye animated background using layered radial gradients */
+    .tie-dye-bg{
+      position:fixed; inset:0; z-index:-1; overflow:hidden;
+      background: radial-gradient(30% 30% at 10% 20%, rgba(194,115,242,0.12), transparent 20%),
+                  radial-gradient(25% 25% at 80% 10%, rgba(88,198,242,0.12), transparent 20%),
+                  radial-gradient(40% 40% at 60% 70%, rgba(242,74,114,0.12), transparent 25%),
+                  radial-gradient(35% 35% at 30% 80%, rgba(248,228,76,0.10), transparent 25%),
+                  linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      mix-blend-mode: screen;
+      animation: drift 18s linear infinite;
+      filter: blur(36px) saturate(140%);
+      transform: translateZ(0);
+    }
+    /* additional soft color layers (moving) */
+    .tie-dye-bg::before,
+    .tie-dye-bg::after{
+      content:""; position:absolute; inset:-20%;
+      background: conic-gradient(from 120deg at 50% 50%, var(--pink), var(--yellow), var(--blue), var(--purple), var(--pink));
+      opacity:0.14; filter:blur(40px) saturate(130%);
+      animation: spin 30s linear infinite;
+    }
+    .tie-dye-bg::after{ animation-direction:reverse; opacity:0.12; transform:scale(1.15);}    
+
+    @keyframes spin{
+      from{transform:rotate(0deg) translateZ(0)}
+      to{transform:rotate(360deg) translateZ(0)}
+    }
+    @keyframes drift{
+      0%{background-position:0% 0%}
+      50%{background-position:100% 100%}
+      100%{background-position:0% 0%}
+    }
+
+    /* Page layout */
+    .container{max-width:var(--max-width); margin:0 auto; padding:24px;}
+    header{padding:28px 12px}
+
+    /* Text-logo */
+    .brand{
+      display:flex; align-items:center; gap:14px;
+      color:white; text-decoration:none; width:fit-content;
+      margin:0 auto;
+    }
+    .brand .logo-mark{
+      font-family: 'Playfair Display', serif; font-weight:700; font-size:44px; letter-spacing:0.6px;
+      background: linear-gradient(90deg, var(--pink), var(--yellow), var(--blue), var(--purple));
+      -webkit-background-clip: text; background-clip: text; color:transparent;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transform: translateY(2px);
+    }
+    .brand .tag{
+      font-size:14px; opacity:0.95; color:#f3f3f3; font-weight:400;
+    }
+
+    /* Hero */
+    .hero{
+      display:flex; align-items:center; justify-content:center; text-align:center; padding:48px 16px 72px; gap:18px; flex-direction:column;
+    }
+    .hero h1{font-family:'Playfair Display'; font-size:44px; margin:8px 0 6px;}
+    .hero p.lead{max-width:780px; margin:0 auto 18px; opacity:0.95}
+
+    .cta{
+      display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; text-decoration:none;
+      background: linear-gradient(90deg, var(--pink), var(--blue)); color:#0a0a0a;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45), 0 0 30px rgba(88,198,242,0.08) inset;
+    }
+
+    /* Sections */
+    section{padding:36px 12px;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:18px; box-shadow:var(--card-glow)}
+
+    /* About */
+    .about{display:grid; grid-template-columns:1fr 360px; gap:18px; align-items:center}
+    .about img{width:100%; border-radius:10px; object-fit:cover}
+
+    /* Gallery */
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px}
+    .product{border-radius:10px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:0}
+    .product img{width:100%; display:block}
+    .product .meta{padding:12px}
+    .product h4{margin:0 0 6px; font-family:'Playfair Display'}
+    .product p.price{font-weight:600; margin:0; color:var(--yellow)}
+
+    /* Contact */
+    .contact-grid{display:grid; grid-template-columns:1fr 320px; gap:18px}
+    form input, form textarea{width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:inherit}
+    form button{padding:10px 14px; border-radius:8px; background:linear-gradient(90deg,var(--pink),var(--purple)); border:0; color:#fff; font-weight:600}
+
+    footer{padding:24px 12px; text-align:center; opacity:0.85}
+
+    @media (max-width:880px){
+      .about{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .brand .logo-mark{font-size:36px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tie-dye-bg" aria-hidden="true"></div>
+
+  <header class="container">
+    <a class="brand" href="#">
+      <div class="logo-mark">ShaBe</div>
+      <div class="tag">Handmade with Heart &amp; a Splash of Colour</div>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h1>Handmade gifts, colourful and personal</h1>
+      <p class="lead">ShaBe creates unique candles, beaded jewellery, printed shirts, tote bags, illustrations, handmade soap and personalised crafts for every occasion. Handcrafted locally and sold at markets around the area.</p>
+      <a class="cta" href="#products">Explore the collection</a>
+    </section>
+
+    <section id="about" class="container">
+      <div class="about card">
+        <div>
+          <h2 style="font-family:'Playfair Display'">About ShaBe</h2>
+          <p>ShaBe started from a love of colour, texture and small joyful things. From beaded bracelets to cozy candles and illustrated prints, each piece is made by hand with attention to detail and a bit of playful colour. Catch ShaBe at local markets — or send a message to request a custom order.</p>
+          <p style="margin-top:12px"><strong>Crafts include:</strong> Candles, Beaded Jewellery, Printed Shirts, Tote Bags, Illustrations, Handmade Soap and more.</p>
+        </div>
+        <div>
+          <!-- placeholder for workshop photo -->
+          <img src="https://via.placeholder.com/560x360?text=Workshop+Photo" alt="ShaBe workshop placeholder">
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="container">
+      <div class="card">
+        <h2 style="font-family:'Playfair Display'">Featured Products</h2>
+        <p style="opacity:0.9">A few sample items — replace these placeholders with your sister's product photos and descriptions.</p>
+
+        <div class="grid" style="margin-top:14px">
+          <div class="product">
+            <img src="https://via.placeholder.com/600x480?text=Candles" alt="Candles">
+            <div class="meta">
+              <h4>Candles — Floral Scent</h4>
+              <p class="price">R120</p>
+            </div>
+          </div>
+
+          <div class="product">
+            <img src="https://via.placeholder.com/600x480?text=Beaded+Bracelet" alt="Beaded Bracelet">
+            <div class="meta">
+              <h4>Beaded Bracelet — Custom</h4>
+              <p class="price">R85</p>
+            </div>
+          </div>
+
+          <div class="product">
+            <img src="https://via.placeholder.com/600x480?text=Printed+Shirt" alt="Printed Shirt">
+            <div class="meta">
+              <h4>Printed Shirt — Tie-dye Print</h4>
+              <p class="price">R220</p>
+            </div>
+          </div>
+
+          <div class="product">
+            <img src="https://via.placeholder.com/600x480?text=Tote+Bag" alt="Tote Bag">
+            <div class="meta">
+              <h4>Printed Tote Bag</h4>
+              <p class="price">R95</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top:12px; font-size:0.95rem;">Want to add more products? Copy and paste another <code>.product</code> card inside the <code>.grid</code>.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="card">
+        <h2 style="font-family:'Playfair Display'">Get in touch</h2>
+        <div class="contact-grid" style="margin-top:12px">
+          <div>
+            <p>If you'd like to make a custom order or ask about upcoming markets, send a message — or find ShaBe on social media.</p>
+            <ul style="padding-left:18px; opacity:0.95">
+              <li>Email: <em>hello@shabe.example</em> (placeholder)</li>
+              <li>Instagram: <em>@shabe_crafts</em> (placeholder)</li>
+              <li>Facebook: <em>ShaBe Crafts</em> (placeholder)</li>
+            </ul>
+
+            <h4 style="margin-top:12px">Next markets</h4>
+            <p style="margin-top:6px;">Add upcoming market dates here (e.g., Saturday Market, 10am–3pm, Riverside Park).</p>
+          </div>
+
+          <div>
+            <form action="#" method="post" onsubmit="alert('This is a placeholder form — replace with a real endpoint or an email handler.'); return false;">
+              <label class="sr-only">Name</label>
+              <input type="text" name="name" placeholder="Your name*" required>
+              <div style="height:10px"></div>
+              <input type="email" name="email" placeholder="Email*" required>
+              <div style="height:10px"></div>
+              <textarea name="message" rows="5" placeholder="Message (Tell us what you'd like)"></textarea>
+              <div style="height:10px"></div>
+              <button type="submit">Send message</button>
+            </form>
+
+            <p style="margin-top:12px; font-size:0.9rem; opacity:0.85">Prefer social? DM on Instagram <em>@shabe_crafts</em>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="margin:6px 0">© <strong>ShaBe</strong> — Handmade with Heart &amp; a Splash of Colour</p>
+      <p style="font-size:0.9rem; opacity:0.75; margin:6px 0">Replace placeholder images and contact details in <code>index.html</code> before publishing.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
