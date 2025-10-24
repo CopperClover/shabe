@@ -1,0 +1,666 @@
+[
+  {
+    "id": "nails",
+    "name": "Nails",
+    "price": "R90",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "towel-face-cloth",
+    "name": "Towel & face cloth",
+    "price": "R100",
+    "category": "Bags",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "golf-towel",
+    "name": "Golf towel",
+    "price": "R60",
+    "category": "Bags",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "tea-towel",
+    "name": "Tea towel",
+    "price": "R25",
+    "category": "Bags",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "stone-necklace",
+    "name": "Stone necklace",
+    "price": "R80",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sea-shell-necklace",
+    "name": "Sea shell necklace",
+    "price": "R60",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sea-shell-bracelet",
+    "name": "Sea shell bracelet",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "big-turtle",
+    "name": "Big turtle",
+    "price": "R150",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "seashell",
+    "name": "Seashell",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "dolphin-bowl",
+    "name": "Dolphin bowl",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "spooky",
+    "name": "Spooky",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "cake-pops",
+    "name": "Cake Pops",
+    "price": "R35",
+    "category": "nan",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "halloween-slab",
+    "name": "Halloween Slab",
+    "price": "R45",
+    "category": "nan",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "hot-choc-bombs",
+    "name": "Hot choc bombs",
+    "price": "R45",
+    "category": "nan",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "pretzel",
+    "name": "Pretzel",
+    "price": "R50",
+    "category": "nan",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "pins-animated",
+    "name": "Pins animated",
+    "price": "R15",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "squishy-keyring",
+    "name": "Squishy keyring",
+    "price": "R20",
+    "category": "Keyrings",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "roses-1",
+    "name": "Roses shiny",
+    "price": "R20",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sun-catcher",
+    "name": "Sun catcher",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "double-pots",
+    "name": "Double pots",
+    "price": "R45",
+    "category": "Containers",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "honey-pot",
+    "name": "Honey Pot",
+    "price": "R30",
+    "category": "Containers",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "painting-plaster",
+    "name": "Painting Plaster",
+    "price": "R25",
+    "category": "Containers",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "cushion-plus-inner",
+    "name": "Cushion + Inner",
+    "price": "R140",
+    "category": "Cushions",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "pencil-case",
+    "name": "Pencil Case",
+    "price": "R20",
+    "category": "Cushions",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "charm-bracelet",
+    "name": "Charm bracelet",
+    "price": "R80",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "magnets-animated",
+    "name": "Magnets Animated",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "animated-sets",
+    "name": "Animated sets",
+    "price": "R50",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "wings-earrings",
+    "name": "Wings earrings",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "faces-earrings",
+    "name": "Faces earrings",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "gumball-earrings",
+    "name": "Gumball earrings",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sea-horse-earrings",
+    "name": "Sea horse earrings",
+    "price": "R25",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "glass-bead-necklace-1",
+    "name": "Glass bead necklace",
+    "price": "R80",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sleepers",
+    "name": "Sleepers",
+    "price": "R130",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "animated-sea-charms",
+    "name": "Animated sea charms",
+    "price": "R45",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "glass-bead-necklace",
+    "name": "Glass bead necklace",
+    "price": "R80",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "t-shirts-small",
+    "name": "T-shirts (small)",
+    "price": "R90",
+    "category": "Shirts",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sketches",
+    "name": "Sketches",
+    "price": "R50",
+    "category": "Sketches",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "tin-candle",
+    "name": "Tin candle",
+    "price": "R50",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "round-small-glass",
+    "name": "Round small glass",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "flat-heart",
+    "name": "Flat heart",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "glass-squares",
+    "name": "Glass squares",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "round-with-candle",
+    "name": "Round with candle",
+    "price": "R100",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "hexaganol",
+    "name": "Hexaganol",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "bow",
+    "name": "Bow",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "large-glass",
+    "name": "Large glass",
+    "price": "R180",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "christamas-tree",
+    "name": "Christamas tree",
+    "price": "R100",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "oval-stepped",
+    "name": "Oval stepped",
+    "price": "R100",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "tea-cup-saucer",
+    "name": "Tea cup & saucer",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "heart-cup",
+    "name": "Heart cup",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "tullips",
+    "name": "Tullips",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "flowers",
+    "name": "Flowers",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "whale-tail",
+    "name": "Whale tail",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "dolphin",
+    "name": "Dolphin",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "hands-1",
+    "name": "Hands",
+    "price": "R120",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "long-candle",
+    "name": "Long candle",
+    "price": "R80",
+    "category": "Candle",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "cushion-cover-disney",
+    "name": "Cushion Cover Disney",
+    "price": "R80",
+    "category": "Cushions",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "shirt-knysna",
+    "name": "Shirt Knysna",
+    "price": "R100",
+    "category": "Shirts",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "animated-apron",
+    "name": "Animated Apron",
+    "price": "R80",
+    "category": "Aprons",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "bags-knysna",
+    "name": "Bags Knysna",
+    "price": "R70",
+    "category": "Bags",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "bag-disney",
+    "name": "Bag Disney",
+    "price": "R80",
+    "category": "Bags",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "dnd-dice",
+    "name": "DnD Dice",
+    "price": "R80",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "resin-rings",
+    "name": "Resin rings",
+    "price": "R15",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "small-butterfly-keyring",
+    "name": "Small butterfly keyring",
+    "price": "R20",
+    "category": "Keyrings",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "spotify-keyrings",
+    "name": "Spotify keyrings",
+    "price": "R30",
+    "category": "Keyrings",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "butterfly-keyring-big",
+    "name": "Butterfly keyring big",
+    "price": "R25",
+    "category": "Keyrings",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sea-keyrings",
+    "name": "Sea keyrings",
+    "price": "R40",
+    "category": "Keyrings",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "keyrings-abc",
+    "name": "Keyrings ABC",
+    "price": "R40",
+    "category": "Keyrings",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "pearl-earrings",
+    "name": "Pearl earrings",
+    "price": "R20",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "ladybird-earrings",
+    "name": "Ladybird earrings",
+    "price": "R20",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "bee-earrings",
+    "name": "Bee earrings",
+    "price": "R20",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "sea-charm-earrings",
+    "name": "Sea charm earrings",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "beaded-earrings",
+    "name": "Beaded earrings",
+    "price": "R25",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "fancy-beaded-earrings",
+    "name": "Fancy beaded earrings",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "resin-earrings-sea",
+    "name": "Resin earrings sea",
+    "price": "R20",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "bead-necklace",
+    "name": "Bead necklace",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "silver-disc-resin-leather-necklace",
+    "name": "Silver disc resin leather necklace",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "small-resin-leather-necklace",
+    "name": "Small resin leather necklace",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "large-resin-leather-necklace",
+    "name": "Large resin leather necklace",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "plain-beaded-bracelet",
+    "name": "Plain beaded bracelet",
+    "price": "R20",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "bead-bracelets",
+    "name": "Bead bracelets",
+    "price": "R30",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "loom-bracelets",
+    "name": "Loom bracelets",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "leather-bracelet",
+    "name": "Leather bracelet",
+    "price": "R40",
+    "category": "Jewelry",
+    "image": "None",
+    "description": "nan"
+  },
+  {
+    "id": "hands",
+    "name": "Hands",
+    "price": "R100",
+    "category": "Candle",
+    "image": "None",
+    "description": "Hands in packaging"
+  }
+]
