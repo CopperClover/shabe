@@ -307,6 +307,51 @@
       transform: translateY(-2px);
       transition: all 0.2s ease;
     }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      background: linear-gradient(90deg, var(--pink), var(--blue));
+      border: none;
+      border-radius: 999px;
+      color: #0a0a0a;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    #scrollTopBtn.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #scrollTopBtn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-3px);
+    }
+
+    #order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    #order-form input,
+    #order-form select,
+    #order-form button {
+      padding: 8px;
+      font-size: 16px;
+    }
   </style>
 </head>
 
@@ -378,17 +423,244 @@
           </div>
 
           <div>
-            <form action="#" method="post"
-              onsubmit="alert('This is a placeholder form — replace with a real endpoint or an email handler.'); return false;">
-              <label class="sr-only">Name</label>
-              <input type="text" name="name" placeholder="Your name*" required>
-              <div style="height:10px"></div>
-              <input type="email" name="email" placeholder="Email*" required>
-              <div style="height:10px"></div>
-              <textarea name="message" rows="5" placeholder="Message (Tell us what you'd like)"></textarea>
-              <div style="height:10px"></div>
-              <button type="submit">Send message</button>
+            <!-- Success message banner -->
+            <div id="success-banner" style="display: none; color: #4CAF50; margin-bottom: 20px; padding: 20px; background: rgba(76, 175, 80, 0.1); border-radius: 8px; text-align: center;">
+              <h3 style="margin: 0 0 10px 0; color: #4CAF50;">Thank You!</h3>
+              <p style="margin: 0;">Your order has been received. We'll be in touch soon to confirm details.</p>
+            </div>
+
+            <form action="https://api.staticforms.xyz/submit" method="POST" id="order-form" onsubmit="return handleSubmit(event)">
+              <!-- Hidden fields for StaticForms -->
+              <input type="hidden" name="accessKey" value="sf_2a3cli0414i5j7d63nncik37">
+              
+              <!-- Cart validation message -->
+              <div id="cart-error" style="display: none; color: var(--pink); margin-bottom: 10px; padding: 10px; background: rgba(242, 74, 114, 0.1); border-radius: 8px;"></div>
+
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <input type="tel" name="phone" placeholder="Your phone number">
+
+              <!-- Cart Items Section -->
+              <div id="cart-items">
+                <!-- Cart items will be added here dynamically -->
+              </div>
+
+              <!-- Add Item Section -->
+              <div class="add-item-section">
+                <select id="item-select">
+                  <option value="" disabled selected>Select an item to add</option>
+                </select>
+                <input type="number" id="item-quantity" value="1" min="1" style="width: 80px;">
+                <button type="button" onclick="addToCart()">Add to Cart</button>
+              </div>
+
+              <div id="cart-summary"
+                style="margin: 20px 0; padding: 15px; background: var(--glass); border-radius: 8px;">
+                <h3 style="margin-top: 0;">Order Summary</h3>
+                <div id="cart-total">Total: R0</div>
+              </div>
+
+              <textarea name="message" placeholder="Additional notes or special requests"></textarea>
+              <button type="submit">Send Order Request</button>
+
+              <!-- Hidden input to store cart data -->
+              <input type="hidden" name="$cart" id="cart-data">
             </form>
+
+            <script>
+              // Load items from JSON
+              let items = [];
+              let cart = [];
+
+              async function initializeCart() {
+                try {
+                  const response = await fetch('assets/items.json');
+                  const data = await response.json();
+                  items = data.filter(data => data.image !== "None");
+                  const select = document.getElementById('item-select');
+
+                  // Group items by category
+                  const categories = {};
+                  for (const item of items) {
+                    if (!categories[item.category]) {
+                      categories[item.category] = [];
+                    }
+                    categories[item.category].push(item);
+                  }
+
+                  // Create option groups for each category
+                  const sortedCategories = Object.keys(categories).sort();
+                  for (const category of sortedCategories) {
+                    const group = document.createElement('optgroup');
+                    group.label = category;
+
+                    const sortedItems = categories[category].sort((a, b) => a.name.localeCompare(b.name));
+                    for (const item of sortedItems) {
+                      const option = document.createElement('option');
+                      option.value = item.id;
+                      option.textContent = `${item.name} (${item.price})`;
+                      group.appendChild(option);
+                    }
+
+                    select.appendChild(group);
+                  }
+                } catch (err) {
+                  console.error('Error loading items:', err);
+                }
+              }
+
+              function addToCart() {
+                const select = document.getElementById('item-select');
+                const quantity = document.getElementById('item-quantity');
+
+                if (!select.value) return;
+
+                const item = items.find(i => i.id === select.value);
+                if (!item) return;
+
+                const existingItem = cart.find(i => i.id === item.id);
+                if (existingItem) {
+                  existingItem.quantity += Number.parseInt(quantity.value);
+                } else {
+                  cart.push({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: Number.parseInt(quantity.value)
+                  });
+                }
+
+                updateCartDisplay();
+                select.value = '';
+                quantity.value = '1';
+              }
+
+              function removeFromCart(itemId) {
+                cart = cart.filter(item => item.id !== itemId);
+                updateCartDisplay();
+              }
+
+              function updateQuantity(itemId, newQuantity) {
+                const item = cart.find(i => i.id === itemId);
+                if (item) {
+                  item.quantity = Number.parseInt(newQuantity);
+                  if (item.quantity <= 0) {
+                    removeFromCart(itemId);
+                  } else {
+                    updateCartDisplay();
+                  }
+                }
+              }
+
+              function updateCartDisplay() {
+                const cartItems = document.getElementById('cart-items');
+                const cartData = document.getElementById('cart-data');
+
+                cartItems.innerHTML = cart.map(item => `
+                  <div class="cart-item" style="display: flex; align-items: center; gap: 10px; margin: 10px 0; padding: 10px; background: var(--glass); border-radius: 8px;">
+                    <div style="flex-grow: 1;">
+                      <strong>${item.name}</strong> (${item.price})
+                    </div>
+                    <input type="number" 
+                           value="${item.quantity}" 
+                           min="1" 
+                           style="width: 60px;"
+                           onchange="updateQuantity('${item.id}', this.value)">
+                    <button type="button" 
+                            onclick="removeFromCart('${item.id}')"
+                            style="padding: 5px 10px;">×</button>
+                  </div>
+                `).join('');
+
+                // Calculate total
+                const total = cart.reduce((sum, item) => {
+                  const price = Number.parseInt(item.price.replaceAll('R', ''));
+                  return sum + (price * item.quantity);
+                }, 0);
+
+                document.getElementById('cart-total').textContent = `Total: R${total}`;
+
+                // Format cart data for email readability
+                const formattedCart = cart.map((item, index) => {
+                  return `Item ${index + 1}:
+    ID: ${item.id}
+    Name: ${item.name}
+    Price: ${item.price}
+    Quantity: ${item.quantity}
+    Subtotal: R${Number.parseInt(item.price.replaceAll('R', '')) * item.quantity}
+                  `
+                }).join('\n');
+
+                // Add total to cart data
+                const fullCartText = `${formattedCart}\n\nTotal Order Value: R${total}`;
+                
+                // Update hidden input with formatted cart data
+                cartData.value = fullCartText;
+              }
+
+              // Initialize cart
+              initializeCart();
+              updateCartDisplay();
+
+              // Form submission handler
+              async function handleSubmit(event) {
+                event.preventDefault();
+                const cartErrorDiv = document.getElementById('cart-error');
+                const form = event.target;
+                
+                // Validate cart
+                if (cart.length === 0) {
+                  cartErrorDiv.textContent = 'Please add at least one item to your cart before submitting.';
+                  cartErrorDiv.style.display = 'block';
+                  cartErrorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  setTimeout(() => {
+                    cartErrorDiv.style.display = 'none';
+                  }, 5000);
+                  return false;
+                }
+                
+                cartErrorDiv.style.display = 'none';
+
+                try {
+                  // Submit form data to StaticForms
+                  const formData = new FormData(form);
+                  const response = await fetch('https://api.staticforms.xyz/submit', {
+                    method: 'POST',
+                    body: formData
+                  });
+
+                  if (response.ok) {
+                    // Show success banner
+                    const successBanner = document.getElementById('success-banner');
+                    successBanner.style.display = 'block';
+                    successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Reset form and cart
+                    form.reset();
+                    cart = [];
+                    updateCartDisplay();
+
+                    // Hide success message after 10 seconds
+                    setTimeout(() => {
+                      successBanner.style.display = 'none';
+                    }, 10000);
+                  } else {
+                    throw new Error('Form submission failed');
+                  }
+                } catch (error) {
+                  console.error('Error submitting form:', error);
+                  cartErrorDiv.textContent = 'There was an error submitting your order. Please try again.';
+                  cartErrorDiv.style.display = 'block';
+                  cartErrorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  setTimeout(() => {
+                    cartErrorDiv.style.display = 'none';
+                  }, 5000);
+                }
+
+                return false;
+              }
+            </script>
+
 
             <p style="margin-top:12px; font-size:0.9rem; opacity:0.85">Prefer social? DM on Instagram
               <em>@shabe_crafts</em>.
@@ -408,6 +680,8 @@
       </p>
     </div>
   </footer>
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
   <script>
     // Enable smooth scrolling
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -415,6 +689,7 @@
     fetch('assets/items.json')
       .then(response => response.json())
       .then(items => {
+        items = items.filter(item => item.image !== "None");
         const container = document.querySelector('#products .card');
         container.innerHTML = `
         <h2 style="font-family:'Playfair Display'">Our Products</h2>
@@ -480,8 +755,23 @@
         });
       })
       .catch(err => console.error('Error loading items:', err));
-  </script>
 
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    const categorySection = document.getElementById('products');
+
+    window.addEventListener('scroll', () => {
+      const triggerPoint = categorySection.offsetTop;
+      if (window.scrollY > triggerPoint) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
 </body>
 

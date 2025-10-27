@@ -20,8 +20,8 @@
     "name": "Golf towel",
     "price": "R60",
     "category": "Bags",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/cloth_golf.jpg",
+    "description": "Assortment of Golf Towls"
   },
   {
     "id": "tea-towel",
@@ -52,24 +52,24 @@
     "name": "Sea shell bracelet",
     "price": "R40",
     "category": "Jewelry",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/jewlery_bracelet_seashells.jpg",
+    "description": "Assorted Seashell themed bracelets"
   },
   {
     "id": "big-turtle",
     "name": "Big turtle",
     "price": "R150",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_turtle.jpeg",
+    "description": "Vanilla Scented"
   },
   {
     "id": "seashell",
     "name": "Seashell",
     "price": "R80",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_seashell_assorted.jpeg",
+    "description": "Caramel Scented"
   },
   {
     "id": "dolphin-bowl",
@@ -91,7 +91,7 @@
     "id": "cake-pops",
     "name": "Cake Pops",
     "price": "R35",
-    "category": "nan",
+    "category": "Misc",
     "image": "None",
     "description": "nan"
   },
@@ -99,7 +99,7 @@
     "id": "halloween-slab",
     "name": "Halloween Slab",
     "price": "R45",
-    "category": "nan",
+    "category": "Misc",
     "image": "None",
     "description": "nan"
   },
@@ -107,7 +107,7 @@
     "id": "hot-choc-bombs",
     "name": "Hot choc bombs",
     "price": "R45",
-    "category": "nan",
+    "category": "Misc",
     "image": "None",
     "description": "nan"
   },
@@ -115,7 +115,7 @@
     "id": "pretzel",
     "name": "Pretzel",
     "price": "R50",
-    "category": "nan",
+    "category": "Misc",
     "image": "None",
     "description": "nan"
   },
@@ -140,8 +140,8 @@
     "name": "Roses shiny",
     "price": "R20",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_roses_assorted.jpeg",
+    "description": "Vanilla Scented"
   },
   {
     "id": "sun-catcher",
@@ -180,8 +180,8 @@
     "name": "Cushion + Inner",
     "price": "R140",
     "category": "Cushions",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/pillow_assorted_2.jpg",
+    "description": "Assorted Pillows with custom designs"
   },
   {
     "id": "pencil-case",
@@ -196,8 +196,8 @@
     "name": "Charm bracelet",
     "price": "R80",
     "category": "Jewelry",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/jewlery_bracelet_assorted.jpg",
+    "description": "Assorted bracelets with custom designs"
   },
   {
     "id": "magnets-animated",
@@ -300,8 +300,8 @@
     "name": "Tin candle",
     "price": "R50",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_container.jpeg",
+    "description": "Caramel Scented"
   },
   {
     "id": "round-small-glass",
@@ -364,8 +364,8 @@
     "name": "Christamas tree",
     "price": "R100",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_christmas_tree.jpeg",
+    "description": "Vanilla Caramel Scented"
   },
   {
     "id": "oval-stepped",
@@ -388,24 +388,24 @@
     "name": "Heart cup",
     "price": "R80",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_cup_heart.jpeg",
+    "description": "Caramel Coconut Scented"
   },
   {
     "id": "tullips",
     "name": "Tullips",
     "price": "R120",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_tulips.jpeg",
+    "description": "Coconut Vanilla Caramel Scented"
   },
   {
     "id": "flowers",
     "name": "Flowers",
     "price": "R120",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_flower.jpeg",
+    "description": "Caramel Coconut Scented"
   },
   {
     "id": "whale-tail",
@@ -420,16 +420,16 @@
     "name": "Dolphin",
     "price": "R120",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_ocean_set.jpeg",
+    "description": "Vanilla Scented"
   },
   {
     "id": "hands-1",
     "name": "Hands",
     "price": "R120",
     "category": "Candle",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/candle_hand_butterfly.jpeg",
+    "description": "Coconut Vanilla Scented"
   },
   {
     "id": "long-candle",
@@ -444,8 +444,8 @@
     "name": "Cushion Cover Disney",
     "price": "R80",
     "category": "Cushions",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/pillow_assorted_4.jpg",
+    "description": "Assorted Disney styled cushion covers"
   },
   {
     "id": "shirt-knysna",
@@ -457,35 +457,43 @@
   },
   {
     "id": "animated-apron",
-    "name": "Animated Apron",
+    "name": "Animated Apron (Grandma)",
     "price": "R80",
     "category": "Aprons",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/apron_grandma.jpg",
+    "description": "Assorted animated aprons with custom designs"
+  },
+  {
+    "id": "animated-apron",
+    "name": "Animated Apron (Chef)",
+    "price": "R80",
+    "category": "Aprons",
+    "image": "assets/images/apron_chef.jpg",
+    "description": "Assorted animated aprons with custom designs"
   },
   {
     "id": "bags-knysna",
     "name": "Bags Knysna",
     "price": "R70",
     "category": "Bags",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/tote_knysna.jpg",
+    "description": "Assorted tote bags with custom designs"
   },
   {
     "id": "bag-disney",
     "name": "Bag Disney",
     "price": "R80",
     "category": "Bags",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/tote_stitch.jpg",
+    "description": "Assorted Disney styled tote bags with custom designs"
   },
   {
     "id": "dnd-dice",
     "name": "DnD Dice",
     "price": "R80",
     "category": "Jewelry",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/toys_dice_assorted.jpg",
+    "description": "Assorted DnD dice sets in various colours"
   },
   {
     "id": "resin-rings",
