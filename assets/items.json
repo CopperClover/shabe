@@ -12,8 +12,8 @@
     "name": "Towel & face cloth",
     "price": "R100",
     "category": "Bags",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/cloth_stitch_christmas.jpg",
+    "description": "Assorted Towel and Face Cloth with custom designs"
   },
   {
     "id": "golf-towel",
@@ -28,8 +28,8 @@
     "name": "Tea towel",
     "price": "R25",
     "category": "Bags",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/cloth_assorted.jpg",
+    "description": "Assorted Tea Towls with custom designs"
   },
   {
     "id": "stone-necklace",
@@ -52,7 +52,7 @@
     "name": "Sea shell bracelet",
     "price": "R40",
     "category": "Jewelry",
-    "image": "assets/images/jewlery_bracelet_seashells.jpg",
+    "image": "assets/images/jewlery_bracelet_seashell.jpg",
     "description": "Assorted Seashell themed bracelets"
   },
   {
@@ -268,8 +268,8 @@
     "name": "Animated sea charms",
     "price": "R45",
     "category": "Jewelry",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/jewlery_bracelet_assorted_5.jpg",
+    "description": "Assorted sea charm bracelets"
   },
   {
     "id": "glass-bead-necklace",
@@ -516,8 +516,8 @@
     "name": "Spotify keyrings",
     "price": "R30",
     "category": "Keyrings",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/keychain_spotify.jpg",
+    "description": "Custom Spotify song keychain"
   },
   {
     "id": "butterfly-keyring-big",
@@ -540,8 +540,8 @@
     "name": "Keyrings ABC",
     "price": "R40",
     "category": "Keyrings",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/keychain_assorted_5.jpg",
+    "description": "Alphabetical Resin Keychains"
   },
   {
     "id": "pearl-earrings",
@@ -636,8 +636,8 @@
     "name": "Plain beaded bracelet",
     "price": "R20",
     "category": "Jewelry",
-    "image": "None",
-    "description": "nan"
+    "image": "assets/images/jewlery_bracelet_assorted_2.jpg",
+    "description": "Assorted beaded bracelets"
   },
   {
     "id": "bead-bracelets",
